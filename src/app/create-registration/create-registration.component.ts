@@ -31,7 +31,7 @@ export class CreateRegistrationComponent implements OnInit{
       firstName:[''],
       lastName:[''],
       email:[''],
-      mobile:[''],
+      mobile:[''], 
       weight:[''],
       height:[''],
       bmi:[''],
@@ -44,6 +44,10 @@ export class CreateRegistrationComponent implements OnInit{
       enquiryDate:[''],
 
     });
+  }
+ 
+  submit(){
+    console.log(this.registerForm.value);
   }
 
   

@@ -38,7 +38,7 @@
           <mat-label>Weight</mat-label>
           <input
             formControlName="weight" 
-            type="text"
+            type="number"
             formControlName="weight"
             matInput
             placeholder="weight"
@@ -62,6 +62,30 @@
             ><i class="fa fa-text-height" aria-hidden="true"></i
           ></mat-icon>
           <mat-hint>Unit in meters</mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6 mt-4">
+        <mat-form-field appearance="outline">
+          <mat-label>BMI</mat-label>
+          <input
+          readonly type="number"
+            formControlName="bmi" 
+            matInput placeholder="BMI"
+          />
+          <mat-icon matSuffix> <i class="fa fa-sort-numeric-desc" aria-hidden="true"></i> </mat-icon>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6 mt-4">
+        <mat-form-field appearance="outline">
+          <mat-label>BMI Result</mat-label>
+          <input
+            readonly
+            formControlName="bmiResult" 
+            matInput placeholder="BMI Result"
+          />
+          <mat-icon matSuffix> <i class="fa fa-check" aria-hidden="true"></i> </mat-icon>
         </mat-form-field>
       </div>
 
@@ -146,5 +170,6 @@
       </div>
 
     </div>
+    <button (click)="submit()" style="margin-top: 20px" mat-raised-button color="accent" >Submit</button>
   </form>
 </div>
