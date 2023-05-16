@@ -52,6 +52,7 @@
         <mat-form-field appearance="outline">
           <mat-label>Height</mat-label>
           <input
+            [readonly]="!this.registerForm.value?.weight"
             formControlName="height"
             type="number"
             formControlName="height"

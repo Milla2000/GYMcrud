@@ -44,6 +44,10 @@ export class CreateRegistrationComponent implements OnInit{
       enquiryDate:[''],
 
     });
+
+    this.registerForm.controls['height'].valueChanges.subscribe(res => {
+      this.calculateBmi(res);
+    });
   }
  
   submit(){
@@ -72,6 +76,6 @@ export class CreateRegistrationComponent implements OnInit{
         this.registerForm.controls['bmiResult'].patchValue("Invalid");
         break;
       
-    
+    }
   }
 }
