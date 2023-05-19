@@ -1,3 +1,99 @@
 {
-  "Enquiry": []
+  "Enquiry": [
+    {
+      "firstName": "Milla",
+      "lastName": "JESSO",
+      "email": "jessyopeno2000@gmail.com",
+      "mobile": "0706755164",
+      "weight": 70,
+      "height": 2,
+      "bmi": 0,
+      "bmiResult": "Underweight",
+      "gender": "Male",
+      "requireTrainer": "No",
+      "package": "Quaterly",
+      "list": [
+        "Strength Gain"
+      ],
+      "gymChoice": "Yes",
+      "enquiryDate": "",
+      "id": 2
+    },
+    {
+      "firstName": "milla",
+      "lastName": "JESSO",
+      "email": "jessyopeno2000@gmail.com",
+      "mobile": "0706755164",
+      "weight": 45,
+      "height": 2,
+      "bmi": 0,
+      "bmiResult": "Underweight",
+      "gender": "Male",
+      "requireTrainer": "Yes",
+      "package": "Monthly",
+      "list": [
+        "Muscle Gain"
+      ],
+      "gymChoice": "Yes",
+      "enquiryDate": "",
+      "id": 3
+    },
+    {
+      "firstName": "milla",
+      "lastName": "JESSO",
+      "email": "jessyopeno2000@gmail.com",
+      "mobile": "0706755164",
+      "weight": 77,
+      "height": 88,
+      "bmi": 0.0010330578512396695,
+      "bmiResult": "Underweight",
+      "gender": "Male",
+      "requireTrainer": "Yes",
+      "package": "Quaterly",
+      "list": [
+        "Muscle Gain"
+      ],
+      "gymChoice": "Yes",
+      "enquiryDate": "",
+      "id": 5
+    },
+    {
+      "firstName": "Milla",
+      "lastName": "JESSO",
+      "email": "jessyopeno2000@gmail.com",
+      "mobile": "0706755164",
+      "weight": 708,
+      "height": 2888,
+      "bmi": 0.000034530121776229464,
+      "bmiResult": "Underweight",
+      "gender": "Male",
+      "requireTrainer": "No",
+      "package": "Quaterly",
+      "list": [
+        "Strength Gain"
+      ],
+      "gymChoice": "Yes",
+      "enquiryDate": "",
+      "id": 6
+    },
+    {
+      "firstName": "Milla",
+      "lastName": "JESSO",
+      "email": "jessyopeno2000@gmail.com8888",
+      "mobile": "0706755164",
+      "weight": 70,
+      "height": 2,
+      "bmi": 0,
+      "bmiResult": "Underweight",
+      "gender": "Male",
+      "requireTrainer": "No",
+      "package": "Quaterly",
+      "list": [
+        "Strength Gain"
+      ],
+      "gymChoice": "Yes",
+      "enquiryDate": "",
+      "id": 7
+    }
+  ]
 }
