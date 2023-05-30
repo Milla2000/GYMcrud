@@ -25,9 +25,11 @@ export class CreateRegistrationComponent implements OnInit{
     "Stress Management",
     "Fitness",
    ];
-   public userIdToUpdate! : number;
+   
+  public userIdToUpdate! : number;
+  public registerForm!: FormGroup;
+  public isUpdateActive: boolean = false;
 
-  public registerForm!: FormGroup
 
   constructor (
     private fb: FormBuilder, 
@@ -61,8 +63,10 @@ export class CreateRegistrationComponent implements OnInit{
 
     this.activatedRoute.params.subscribe(val => {
       this.userIdToUpdate = val['id'];
+      this.isUpdateActive = true;
       this.api.getRegisteredUserId(this.userIdToUpdate)
       .subscribe(res => {
+          
           this.fillFormToUpdate(res);
       })
     })
@@ -75,6 +79,10 @@ export class CreateRegistrationComponent implements OnInit{
      this.registerForm.reset();
     })
 }
+
+  update(){
+     
+  }
 
   calculateBmi(heightValue: number){
     const weight = this.registerForm.value.height;
@@ -96,8 +104,7 @@ export class CreateRegistrationComponent implements OnInit{
         break;
       default:
         this.registerForm.controls['bmiResult'].patchValue("Invalid");
-        break;
-      
+        break;      
     }
   }
 

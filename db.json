@@ -94,6 +94,23 @@
       "gymChoice": "Yes",
       "enquiryDate": "",
       "id": 7
+    },
+    {
+      "firstName": "nn",
+      "lastName": "JESSO",
+      "email": "jessyopeno2000@gmail.com",
+      "mobile": "0706755164",
+      "weight": "",
+      "height": "",
+      "bmi": "",
+      "bmiResult": "",
+      "gender": "",
+      "requireTrainer": "",
+      "package": "",
+      "list": "",
+      "gymChoice": "",
+      "enquiryDate": "",
+      "id": 8
     }
   ]
 }
