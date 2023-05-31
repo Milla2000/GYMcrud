@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { NgToastService } from 'ng-angular-popup';
 import { ApiService } from './../services/api.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../models/user.model';
 
 
@@ -34,6 +34,7 @@ export class CreateRegistrationComponent implements OnInit{
   constructor (
     private fb: FormBuilder, 
     private api: ApiService,
+    private router: Router,
     private activatedRoute: ActivatedRoute, 
     private toastService: NgToastService ){
 
@@ -63,10 +64,9 @@ export class CreateRegistrationComponent implements OnInit{
 
     this.activatedRoute.params.subscribe(val => {
       this.userIdToUpdate = val['id'];
-      this.isUpdateActive = true;
       this.api.getRegisteredUserId(this.userIdToUpdate)
       .subscribe(res => {
-          
+          this.isUpdateActive = true;
           this.fillFormToUpdate(res);
       })
     })
@@ -77,11 +77,17 @@ export class CreateRegistrationComponent implements OnInit{
     .subscribe(res => {
      this.toastService.success({detail: "Registration Successful", summary: "Success", duration: 3000});
      this.registerForm.reset();
+
     })
 }
 
   update(){
-     
+    this.api.updateRegisterUser(this.registerForm.value, this.userIdToUpdate)
+    .subscribe(res => {
+     this.toastService.success({detail: "Registration Successful", summary: "Enquiry Added", duration: 3000});
+     this.registerForm.reset();
+     this.router.navigate(["list"])
+    })
   }
 
   calculateBmi(heightValue: number){

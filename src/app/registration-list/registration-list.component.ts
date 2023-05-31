@@ -19,8 +19,13 @@ export class RegistrationListComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator; // Reference to MatPaginator component
   @ViewChild(MatSort) sort!: MatSort; // Reference to MatSort component
   displayedColumns: string[] = ['id', 'firstName', 'lastName', 'email', 'mobile', 'bmiResult', 'gender', 'package', 'enquiryDate', 'action'];
+  toast: any;
 
-  constructor(private api: ApiService, private router: Router, private confirmService: NgConfirmService, private toastService: NgToastService ) { }
+  constructor(
+    private api: ApiService, 
+    private router: Router,
+    private confirmService: NgConfirmService, 
+    private toastService: NgToastService ) { }
 
   ngOnInit(): void {
     this.getUsers(); // Fetch user data when component initializes
@@ -62,11 +67,25 @@ deleteUser(id: number) {
     },
     () => {
       // Logic if 'No' is clicked
-      console.log("Deletion canceled.");
+      //console.log("Deletion canceled.");
       // You can add any additional logic here
       this.toastService.info({ detail: 'Great choice', summary: 'Action cancelled', duration: 3000 });
     });
 }
 
+ delete(id:number){
+  this.confirmService.showConfirm("Are you sure you want to delete?", 
+    ()=> {
+      this.api.deleteRegistered(id)
+      .subscribe(res=>{
+        this.toast.success({ detail: 'SUCCESS', summary: 'Deleted Successfully', duration: 3000 });
+        this.getUsers();
+      })
+    },
+    ()=> {
+
+    } )
+   
+  }
   
 }

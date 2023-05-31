@@ -171,7 +171,7 @@
       </div>
 
     </div>
-    <button *ngif="!isUpdateActive" (click)="submit()" style="margin-top: 20px" mat-raised-button color="accent" >Submit</button>
-    <button *ngif="isUpdateActive" (click)="update()" style="margin-top: 20px" mat-raised-button color="accent" >Update</button>
+    <button *ngIf="!isUpdateActive" (click)="submit()" style="margin-top: 20px" mat-raised-button color="accent" >Submit</button>
+    <button *ngIf="isUpdateActive" (click)="update()" style="margin-top: 20px" mat-raised-button color="accent" >Update</button>
   </form>
 </div>
