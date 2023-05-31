@@ -26,6 +26,7 @@ export class UserDetailComponent implements OnInit{
       this.userID = val["id"];
       //fetch  user details
       this.fetchuserDetails(this.userID);
+      
     });
   }
 
@@ -33,7 +34,9 @@ export class UserDetailComponent implements OnInit{
     this.api.getRegisteredUserId(this.userID)
     .subscribe(res=> {
       this.userDetail = res;
+      //console.log(this.userDetail);
     })
+    
   }
 
 }
